@@ -233,11 +233,8 @@ nav.active ul li a:hover {
 /* FİRMA BİLGİ – SPLIT SECTION */
 /* --------------------------------- */
 .firma-bilgi-split {
-    display: flex;
-    height: 500px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 50px;
+    flex-direction: column;
+    height: auto;
 }
 
 .firma-metni {
