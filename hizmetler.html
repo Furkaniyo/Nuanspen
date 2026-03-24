@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetler - NuansPen</title>
+    <link rel="stylesheet" href="hizmetler.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="Logo.png" alt="NuansPen Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+            <li><a href="urunler.html">Ürünler</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+<main>
+    <section class="hizmetler">
+        <h3 class="hizmet-baslik">Hizmetlerimiz</h3>
+
+        <div class="hizmet-container">
+            <div class="hizmet-kart">
+                <div class="resim">
+                    <img src="sineklik.jpg" alt="Sineklik">
+                </div>
+                <h4>Sineklik</h4>
+                <p>Evinizi sinek ve böceklerden koruyan kaliteli sineklik sistemleri.</p>
+            </div>
+
+            <div class="hizmet-kart">
+                <div class="resim">
+                    <img src="pimapen.jpg" alt="Pimapen">
+                </div>
+                <h4>Pimapen</h4>
+                <p>Yüksek yalıtımlı PVC pencere ve kapı sistemleri.</p>
+            </div>
+
+            <div class="hizmet-kart">
+                <div class="resim">
+                    <img src="panjur.jpg" alt="Panjur">
+                </div>
+                <h4>Panjur</h4>
+                <p>Ev ve iş yerleriniz için güvenli ve dayanıklı panjur çözümleri.</p>
+            </div>
+
+            <div class="hizmet-kart">
+                <div class="resim">
+                    <img src="dusakabin.png" alt="Duşakabin">
+                </div>
+                <h4>Duşakabin</h4>
+                <p>Modern ve estetik duşakabin modelleri ile banyo dekorasyonunuz tamam.</p>
+            </div>
+
+            <div class="hizmet-kart">
+                <div class="resim">
+                    <img src="camayna.jpeg" alt="Cam & Ayna">
+                </div>
+                <h4>Cam & Ayna</h4>
+                <p>Farklı ölçü ve tasarımlarda cam ve ayna çözümleri.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Telif Hakkı © 2025 NuansPen - Tüm Hakları Saklıdır.</p>
+</footer>
+
+<script>
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('nav');
+const navLinks = document.querySelectorAll('nav ul li');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');  // X şekli
+    navMenu.classList.toggle('active'); // Menü aç/kapa
+
+    // Linkler animasyon
+    navLinks.forEach((link, index) => {
+        if(link.style.animation) {
+            link.style.animation = '';
+        } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        }
+    });
+});
+</script>
+
+</body>
+</html>
