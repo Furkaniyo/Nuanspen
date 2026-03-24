@@ -111,6 +111,19 @@ nav ul li a:hover {
 
 /* Mobil menü */
 @media (max-width: 768px) {
+    .firma-bilgi-split {
+        flex-direction: column;
+        height: auto;
+    }
+    .firma-metni {
+        padding: 30px 20px;
+    }
+    .firma-resim-split {
+        min-height: 300px;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
 
     /* Hamburger göster */
     .hamburger {
@@ -233,8 +246,11 @@ nav.active ul li a:hover {
 /* FİRMA BİLGİ – SPLIT SECTION */
 /* --------------------------------- */
 .firma-bilgi-split {
-    flex-direction: column;
-    height: auto;
+    display: flex;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 50px;
 }
 
 .firma-metni {
