@@ -163,3 +163,119 @@ footer {
     border-top: 1px solid rgba(0,0,0,0.1);
     border-radius: 10px 10px 0 0;
 }
+
+/* --------------------------------- */
+/* ÜRÜNLER HERO BÖLÜMÜ */
+/* --------------------------------- */
+.urunler-hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff;
+    border-radius: 15px;
+    margin: 30px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.urunler-hero h1 {
+    font-size: 36px;
+    color: #1B1B1B;
+    margin-bottom: 15px;
+}
+
+.urunler-hero p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* --------------------------------- */
+/* ÜRÜN GALERİSİ KARTLARI (GRID) */
+/* --------------------------------- */
+.urun-container {
+    display: grid;
+    /* Ekran küçüldükçe kartları otomatik alt alta alır, flex'ten daha etkilidir */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 0 60px;
+}
+
+.urun-kart {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.urun-kart:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.urun-resim {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.urun-resim img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.urun-kart:hover .urun-resim img {
+    transform: scale(1.08);
+}
+
+.urun-bilgi {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Açıklama metinleri farklı uzunlukta olsa da butonu hep en alta iter */
+}
+
+.urun-bilgi h3 {
+    font-size: 22px;
+    color: #1B1B1B;
+    margin-bottom: 10px;
+}
+
+.urun-bilgi p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1; 
+}
+
+.urun-btn {
+    display: inline-block;
+    text-align: center;
+    background: linear-gradient(135deg, #008060, #008000);
+    color: #fff;
+    padding: 12px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.urun-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 128, 96, 0.4);
+}
+
+/* --------------------------------- */
+/* MOBİL UYUM */
+/* --------------------------------- */
+@media (max-width: 768px) {
+    .urunler-hero h1 {
+        font-size: 28px;
+    }
+    .urunler-hero p {
+        font-size: 16px;
+    }
+}
