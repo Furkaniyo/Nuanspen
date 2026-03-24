@@ -169,7 +169,7 @@ nav.active ul li a:hover {
 /* HERO SECTION */
 /* --------------------------------- */
 .hero {
-    background: url('photo/pencere.jpg') no-repeat center/cover;
+    background: url('pencere.jpg') no-repeat center/cover;
     height: 600px;
     width: 100%;
     margin: 25px 0;
