@@ -62,7 +62,6 @@ nav ul li a:hover {
     color: #fff;
 }
 
-/* Hamburger Menü Butonu (Desktop'ta gizli) */
 /* ------------------------------- */
 /* HAMBURGER & MOBİL MENÜ AYARLARI */
 /* ------------------------------- */
@@ -74,13 +73,13 @@ nav ul li a:hover {
     height: 22px;
     cursor: pointer;
     z-index: 1001;
-    margin-left: auto; /* Hamburger sağda */
+    margin-left: auto;
 }
 
 .hamburger span {
     display: block;
     height: 4px;
-    background: #1B1B1B; /* Hamburger çizgi rengi */
+    background: #1B1B1B;
     border-radius: 2px;
     transition: all 0.4s ease;
 }
@@ -95,13 +94,13 @@ nav ul li a:hover {
 }
 .hamburger.open span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-    background: #fff; /* Açılınca alt çizgi beyaz */
+    background: #fff; 
 }
 
 @keyframes navLinkFade {
     from {
         opacity: 0;
-        transform: translateY(-20px); /* yukarıdan gelmesi için -20px */
+        transform: translateY(-20px); 
     }
     to {
         opacity: 1;
@@ -111,21 +110,6 @@ nav ul li a:hover {
 
 /* Mobil menü */
 @media (max-width: 768px) {
-    .firma-bilgi-split {
-        flex-direction: column;
-        height: auto;
-    }
-    .firma-metni {
-        padding: 30px 20px;
-    }
-    .firma-resim-split {
-        min-height: 300px;
-    }
-    .hero-content h1 {
-        font-size: 32px;
-    }
-
-    /* Hamburger göster */
     .hamburger {
         display: flex;
     }
@@ -145,27 +129,27 @@ nav ul li a:hover {
     }
 
     nav.active {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95); /* Siyah + %95 opacity */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    transition: transform 0.5s ease, opacity 0.5s ease; /* Açılırken animasyon */
-}
-nav.active ul li a {
-    color: #fff; /* Beyaz */
-    font-size: 24px;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.5); /* Anasayfadaki gölge efekti */
-    transition: color 0.3s ease;
-}
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.95); 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
 
-nav.active ul li a:hover {
-    color: #ffdc73; /* Anasayfadaki hover rengi */
-    text-shadow: 0 0 10px #000;
-}
+    nav.active ul li a {
+        color: #fff; 
+        font-size: 24px;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.5); 
+        transition: color 0.3s ease;
+    }
 
+    nav.active ul li a:hover {
+        color: #ffdc73; 
+        text-shadow: 0 0 10px #000;
+    }
 
     header {
         flex-direction: row;
@@ -372,4 +356,76 @@ footer {
     font-size: 15px;
     color: #000;
     border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* --------------------------------- */
+/* SABİT ALT ARAMA VE WHATSAPP BUTONU */
+/* --------------------------------- */
+.mobile-contact-bar {
+    display: none; /* Masaüstünde gizli tut */
+}
+
+@media (max-width: 768px) {
+    /* Mobil görünümde aktifleştir ve en alta kitle */
+    .mobile-contact-bar {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9998; 
+    }
+
+    /* Hemen Ara Çubuğu */
+    .call-now-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #008000; 
+        color: white;
+        text-decoration: none;
+        padding: 16px 0;
+        font-size: 18px;
+        font-weight: bold;
+        width: 100%;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease;
+    }
+
+    .call-now-bar:active {
+        background-color: #005a00;
+    }
+
+    /* Yüzen WhatsApp Butonu */
+    .whatsapp-float {
+        position: absolute;
+        bottom: 70px; /* Arama çubuğunun hemen üzerinde */
+        left: 15px; 
+        width: 55px;
+        height: 55px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 9999;
+        transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:active {
+        transform: scale(0.95);
+    }
+
+    /* Çubuk geldiğinde sayfanın en altındaki içeriğin (footer) kapanmaması için ekstra boşluk */
+    body {
+        padding-bottom: 56px; 
+    }
+}
+/* Mobil ekranda İletişim Kurun butonunu gizle */
+@media (max-width: 768px) {
+    .hero-content .cta-button {
+        display: none;
+    }
 }
